@@ -16,6 +16,20 @@
 
 
 // 2
+let A1 = prompt('Please enter the price for a kg of the first type of sand');
+let A2 = prompt('Please enter the price for a kg of the second type of sand');
+let A3 = prompt('Please enter the price for a kg of the third type of sand');
+
+let B1 = prompt('Please enter the volume of the first tank in kg');
+let B2 = prompt('Please enter the volume of the first tank in kg');
+let B3 = prompt('Please enter the volume of the first tank in kg');
+
+let arr1 = new Array(A1, A2, A3).sort();
+let arr2 = new Array(B1, B2, B3).sort();
+
+let sum = arr1[0] * arr2[0] + arr1[1] * arr2[1] + arr1[2] * arr2[2];
+
+let message = (A1 < 100 && A2 < 100 && A3 < 100 && B1 < 100 && B2 < 100 && B3 < 100) ? alert(sum) : alert('Please enter the number lower then 100');
 
 
 // 3
