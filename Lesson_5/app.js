@@ -6,10 +6,35 @@
 // console.log(pow(2, 3));
 
 // 2. Написать функцию поиска наибольшего общего делителя.
-// function pow(a, b) {
-//         return (b == 0) ? a : pow(b, a % b);
+// function nod(a, b) {
+//    return (b == 0) ? a : nod(b, a % b);
 // };
-// console.log(pow(1071, 462));
+// console.log(nod(1071, 462));
+
+// 4. Написать функцию, которая определяет простое ли переданное число.
+// function simple(a, b) {
+//     if (a < 2) {
+//         return 'непростое';
+//     }  
+//     else if (a == 2) {
+//         return 'простое';
+//     } 
+//     else if (a % b == 0) {
+//         return 'непростое';
+//     } 
+//     else if (b < a / 2) {
+//         return simple(a, b + 1);
+//     } else {
+//         return 'простое';
+//     }
+// };
+// console.log(simple(101, 2));
+
+// 6. Написать функцию, которая возвращает число Фибоначчи по переданному порядковому номеру.
+// function fib(n) {
+//     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+//   }
+// console.log(fib(6));
 
 
 
