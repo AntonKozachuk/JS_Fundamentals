@@ -184,3 +184,14 @@
 //       break;
 //   };
 // };
+
+// better way
+// function switchLight() {
+// const doings = [true, illuminateRed, illuminateYellow, illuminateGreen, () => {
+//     clearLights();
+//     clickTimes = 0;
+// }];
+
+// clickTimes++;
+// doings[clickTimes]();
+// };
