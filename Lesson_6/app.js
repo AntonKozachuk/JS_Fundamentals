@@ -15,6 +15,8 @@
 
 // alert(stats(str));
 
+
+
 // 2. Написать функцию, которая принимает двузначное число и возвращает его в текстовом виде. Например: 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.
 
 // let numb = prompt('Please enter a two-digit number');
@@ -43,22 +45,24 @@
 
 // alert(text(numb));
 
+
+
 // 3. Написать функцию, которая заменяет в полученной строке большие буквы на маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
+
+// INCORRECT! =(
 
 // let str = prompt('Please enter a string');
 
 // function change(str) {
     
-//     str = str.replace(/[A-Z]/g, u => u.toLowerCase());
-      
-//     str = str.replace(/[a-z]/g, u => u.toUpperCase());
-    
-//     str = str.replace(/\d/g, '_');
+//     str = str.replace(/[A-Z]/g, u => u.toLowerCase()).replace(/[a-z]/g, u => u.toUpperCase()).replace(/\d/g, '_');
          
 //     return str;
 //     };
 
 //   alert(change(str));
+
+
 
 // 4. Написать функцию, которая преобразует названия cssстилей с дефисом в название в СamelСase стиле: font-size в fontSize, background-color в backgroundColor, textalign в textAlign.
 
@@ -73,13 +77,60 @@
 
 // alert(transf(str));
 
+
+
 // 5. Написать функцию, которая принимает словосочетание и превращает его в аббревиатуру. Например: cascading style sheets в CSS, объектно ориентированное программирование в ООП.
+// let str = 'cascading style sheets';
+// let str = 'объектно ориентированное программирование';
 
-let str = 'cascading style sheets';
+// function transf(str) {
+//     str = str.replace(/(?:^|\s)(\p{Ll})/gu, u => u.toUpperCase()).match(/\p{Lu}/gu).join('');
 
-function transf(str) {
-    str = str.replace(/\b[a-z]/g, u => u.toUpperCase());
-    return str;
-};
+//     return str;
+// };
 
-alert(transf(str));
+// alert(transf(str));
+
+
+
+// 6. Написать функцию, которая принимает любое количество строк, объединяет их в одну длинную строку и возвращает ее.
+
+// function concat() {
+    
+//     let args = Array.prototype.slice.call(arguments, 0);
+    
+//     return args.join('');
+// };
+
+// alert(concat('Написать функцию,', 'которая принимает любое количество строк', 'объединяет их', 'в одну длинную строку и возвращает ее.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sequi debitis tenetur magni saepe ipsam, nostrum ipsum accusantium quam autem reiciendis at doloremque. Nam temporibus autem quae labore, porro quaerat.'));
+
+
+
+// 8. Написать функцию, которая получает url и выводит подробную информацию о нем. Например: url “https://itstep.org/ua/about”, информация “протокол: https, домен: itstep.org, путь: /ua/about”.
+
+// let url = 'https://itstep.org/ua/about';
+
+// function info(url) {
+//     let protocol = url.match(/\w+(?=:)/);
+//     // Може приймати не тільки одинарний домен .org, а і dp.ua і тп.
+//     let domain = url.match(/(?<=:\/\/).*(?=(\.\w+)\/)/).join('');
+//     let path = url.match(/(?<=\.\w+\/).*/);
+    
+//     return `    Протокол:  ${protocol}
+//     Домен:  ${domain}
+//     Путь:   ${path}`;
+// };
+
+// alert(info(url));
+
+
+
+// 9. Написать функцию, которая принимает строку и разделитель и возвращает массив подстрок, разбитых с помощью указанного разделителя. Например: строка “10/08/2020”, разделитель “/”, результат: “10”, “08”, “2020”. Выполняя задание, не используйте функцию split().
+
+// function spliT(str, separator) {
+//     let reg = new RegExp(`[^\[${separator}](.+?(?=\[${separator}]))|(?<=\[${separator}]).*`, "g");
+//     let arr = str.match(reg);
+//     return arr;
+// };
+
+// alert(spliT('10/08/2020', '/'));
