@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blocks</title>
 </head>
 <body>
     <input type="number" class="in">
@@ -12,18 +12,28 @@
 
     <script>
         document.querySelector('.in').addEventListener('keyup', function(ev){
-            let blocs = document.querySelectorAll('.blocs'),
+            let blocs = document.querySelector('.blocs'),
                 count = parseInt(ev.target.value);
-            let d = document.createElement('div');
-            blocs.appendChild();
+            
+            function create() {
+                let d = document.createElement('div');
+                d.style.width = '100px';
+                d.style.height = '100px';
+                d.style.backgroundColor = 'black';
+                d.style.margin = '10px';
+                d.style.display = 'inline-block';
+                return d;
+            };    
            
+           // Не зрозумів що тут треба зробити. 
             // while(blocs.firstChild){
             //     blocs.removeChild(blocs.firstChild);
             // }       
 
-            // while(count++){
-            //     blocs.appendChild(document.createElement('div'));
-            // }        
+            while(count > 0 ){
+                blocs.appendChild(create());
+                count--;
+            };        
 });
 
    </script>
