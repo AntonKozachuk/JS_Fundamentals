@@ -36,54 +36,54 @@
 
 // Task 2: Tic-Tac-Toe Checker
 
-let ttt = [
-    [0, 0, 2],
-    [0, 0, 2],
-    [1, 1, 0]
-];
+// let ttt = [
+//     [0, 0, 2],
+//     [0, 0, 2],
+//     [1, 1, 0]
+// ];
 
-function checking(ttt) {
+// function checking(ttt) {
   
-    //checking for the win
-    function wins(ttt) {
+//     //checking for the win
+//     function wins(ttt) {
 
-        for(let i = 0; i < ttt.length; i++){
-            if(ttt[i][0] == ttt[i][1] && ttt[i][0] == ttt[i][2]) {
-            return ttt[i][0];
-        }};
+//         for(let i = 0; i < ttt.length; i++){
+//             if(ttt[i][0] == ttt[i][1] && ttt[i][0] == ttt[i][2]) {
+//             return ttt[i][0];
+//         }};
 
-        for(let i = 0; i < ttt.length; i++){
-            if(ttt[0][i] == ttt[1][i] && ttt[0][i] == ttt[2][i]) {
-                return ttt[0][i];
-        }};
+//         for(let i = 0; i < ttt.length; i++){
+//             if(ttt[0][i] == ttt[1][i] && ttt[0][i] == ttt[2][i]) {
+//                 return ttt[0][i];
+//         }};
 
-        if(ttt[1][1] == ttt[0][0] && ttt[1][1] == ttt[2][2] || ttt[1][1] == ttt[0][2] && ttt[1][1] == ttt[2][0]) {
-            return ttt[1][1];
-        };
-    };
+//         if(ttt[1][1] == ttt[0][0] && ttt[1][1] == ttt[2][2] || ttt[1][1] == ttt[0][2] && ttt[1][1] == ttt[2][0]) {
+//             return ttt[1][1];
+//         };
+//     };
 
-    let win = wins(ttt);
+//     let win = wins(ttt);
 
-    //checking for the draw
-    function checkDraw(ttt) {
-       if(ttt.toString().indexOf(0) == -1 && win == undefined) {
-            return 0;
-        };
-    };
+//     //checking for the draw
+//     function checkDraw(ttt) {
+//        if(ttt.toString().indexOf(0) == -1 && win == undefined) {
+//             return 0;
+//         };
+//     };
 
-    let draw = checkDraw(ttt);
+//     let draw = checkDraw(ttt);
 
-    if(win !== undefined && win !== 0) {
-        return win;
-    } else if (draw !== undefined) {
-        return 0;
-    } else {
-        return -1;
-    };
+//     if(win !== undefined && win !== 0) {
+//         return win;
+//     } else if (draw !== undefined) {
+//         return 0;
+//     } else {
+//         return -1;
+//     };
     
-};
+// };
 
-console.log(checking(ttt));
+// console.log(checking(ttt));
 
 
 
@@ -189,61 +189,61 @@ console.log(checking(ttt));
 
 // Task 5: squares 
 
-// let colors = [
-//     "rgb(192, 192, 192)",
-//     "rgb(128, 128, 128)",
-//     "rgb(0, 0, 0)",
-//     "rgb(255, 0, 0)",
-//     "rgb(128, 0, 0)",
-//     "rgb(255, 255, 0)",
-//     "rgb(128, 128, 0)",
-//     "rgb(0, 255, 0)",
-//     "rgb(0, 128, 0)",
-//     "rgb(0, 255, 255)",
-//     "rgb(0, 128, 128)",
-//     "rgb(0, 0, 255)",
-//     "rgb(0, 0, 128)",
-//     "rgb(255, 0, 255)",
-//     "rgb(128, 0, 128)",
-//     "rgb(128,0,0)",
-//     "rgb(220,20,60)",
-//     "rgb(250,128,114)",
-//     "rgb(255,140,0)",
-//     "rgb(255,215,0)",
-//     "rgb(240,230,140)",
-//     "rgb(154,205,50)",
-//     "rgb(173,255,47)",
-//     "rgb(32,178,170)",
-//     "rgb(0,139,139)",
-//     "rgb(95,158,160)",
-//     "rgb(0,0,128)",
-//     "rgb(139,0,139)"
-// ];
+let colors = [
+    "rgb(192, 192, 192)",
+    "rgb(128, 128, 128)",
+    "rgb(0, 0, 0)",
+    "rgb(255, 0, 0)",
+    "rgb(128, 0, 0)",
+    "rgb(255, 255, 0)",
+    "rgb(128, 128, 0)",
+    "rgb(0, 255, 0)",
+    "rgb(0, 128, 0)",
+    "rgb(0, 255, 255)",
+    "rgb(0, 128, 128)",
+    "rgb(0, 0, 255)",
+    "rgb(0, 0, 128)",
+    "rgb(255, 0, 255)",
+    "rgb(128, 0, 128)",
+    "rgb(128,0,0)",
+    "rgb(220,20,60)",
+    "rgb(250,128,114)",
+    "rgb(255,140,0)",
+    "rgb(255,215,0)",
+    "rgb(240,230,140)",
+    "rgb(154,205,50)",
+    "rgb(173,255,47)",
+    "rgb(32,178,170)",
+    "rgb(0,139,139)",
+    "rgb(95,158,160)",
+    "rgb(0,0,128)",
+    "rgb(139,0,139)"
+];
 
-// let squares = document.querySelectorAll('.squares');
+let squares = document.querySelectorAll('.squares');
 
-// for (let i=0; i < squares.length; i++) {
-//     squares[i].style.backgroundColor = colors[i];
-// };
+for (let i=0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+};
 
-// let change = document.getElementById('change');
+let change = document.getElementById('change');
 
-// change.onclick = function(e) {
-//     let target = e.target;
+change.onclick = function(e) {
+    let target = e.target;
 
-//     let computedStyle = getComputedStyle(target);
+    let computedStyle = getComputedStyle(target);
       
-//     while (target != this) {
-//         if (target.tagName == 'DIV') {
+    while (target != this) {
+        if (target.tagName == 'DIV') {
 
-//         document.body.style.backgroundColor = computedStyle.backgroundColor;
+        document.body.style.backgroundColor = computedStyle.backgroundColor;
 
-//         return;
-//         };
+        return;
+        };
         
-//         target = target.parentNode;
-//       };
-//     };
+        target = target.parentNode;
+      };
+    };
 
 
 

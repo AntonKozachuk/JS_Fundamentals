@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Name</title>
+</head>
+<body>
+    <h3>Enter your name (name can't contain digits)</h3>
+    <form action="#">
+        <input type="text" id="name"><br>
+    </form>
+
+    <script>
+        document.getElementById('name').addEventListener('input', function(e){
+            let input = e.target.value;
+            e.target.value = input.split('').filter(elem => elem.match(/\D/g)).join('');
+        });
+    </script>
+</body>
+</html>

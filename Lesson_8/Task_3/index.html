@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .images{
+            position: relative;
+            margin: 0;
+            font-size: 0;
+            top: 30px;
+            left: 0;
+            transition: left 2s;
+            display: flex;
+        }
+        .slider{
+            width: 800px;
+            height: 600px;
+            overflow-x: hidden;
+        }
+
+        nav{
+            position: fixed;
+            top: 0; 
+            left: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="btn-prev">Prev</button>
+        <button class="btn-next">Next</button>
+    </nav>
+    <div class="slider">
+        <div class="images"></div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
