@@ -1,14 +1,4 @@
-h1 {
-    height: 400px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    font-family: fantasy;
-}
+/* cirles animation */
 
 * {
 	box-sizing: border-box;
@@ -19,9 +9,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    padding: 6rem 2rem;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1), rgba(121, 9, 83, 1) 35%, rgba(0, 11, 255, 1) 100%);
+  padding: 6rem 2rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1), rgba(121, 9, 83, 1) 35%, rgba(0, 11, 255, 1) 100%);
 }
 
 .path {
@@ -79,6 +69,20 @@ body {
 	}
 }
 
+/* other */
+
+h1 {
+  height: 400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: fantasy;
+}
+
 button {
     background-color: rgba(245,19,247,1);
     color: white;
@@ -88,7 +92,8 @@ button {
     cursor: pointer;
     width: 40%;
     margin-left: 30%;
-    margin-right: 30%
+    margin-right: 30%;
+    display: inline-block; 
   }
 
   #down {
@@ -110,6 +115,12 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
      
 }
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
   
   
   button:hover {
@@ -117,12 +128,35 @@ input[type=text], input[type=password] {
   }
   
   /* Extra styles for the cancel button */
-  .cancel {
+  .cancelLog {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
     margin-left: 0;
     margin-right: 0;
+  }
+
+    /* Extra styles for the cancel button */
+  .cancelSign {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelSign, .btnSign {
+    float: left;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .btnSign {
+    background-color: yellowgreen;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
   }
   
   /* Center the image and position the close button */
@@ -159,7 +193,7 @@ input[type=text], input[type=password] {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
-    padding-top: 60px;
+    padding-top: 30px;
   }
   
   /* Modal Content/Box */
@@ -173,7 +207,8 @@ input[type=text], input[type=password] {
   }
   
   /* The Close Button (x) */
-  .close {
+  .closeLog,
+  .closeSign {
     position: absolute;
     right: 25px;
     top: 0;
@@ -182,8 +217,10 @@ input[type=text], input[type=password] {
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .closeLog:hover,
+  .closeLog:focus,
+  .closeSign:hover,
+  .closeSign:focus  {
     color: red;
     cursor: pointer;
   }
@@ -215,3 +252,26 @@ input[type=text], input[type=password] {
        width: 100%;
     }
   }
+
+  /* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelSign, .btnSign {
+     width: 100%;
+  }
+}
+
+#lookAge1, #lookAge2 {
+  margin: 10px;
+  display: inline-block;
+}
+
+#ageFrom, #ageTo {
+  width: 40px;
+}

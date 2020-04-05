@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div id="modLog" class="modal">
-        <form action="#" class="modal-content animate" method="POST">
+        <form class="modal-content animate" id="logSign">
             <div class="imgcontainer">
-                <span id="close" class="close" title="Close Modal">&times;</span>
+                <span class="closeLog" title="Close Modal">&times;</span>
                 <img src="https://images.squarespace-cdn.com/content/54b7b93ce4b0a3e130d5d232/1519986430884-H1GYNRLHN0VFRF6W5TAN/icon.png" alt="Avatar" class="avatar">
             </div>
 
@@ -25,14 +26,68 @@
             </div>
 
             <div class="container" id='down'>
-                <button type="button" class="cancel">Cancel</button>
+                <button type="button" class="cancelLog">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
     </div>
 
+    <div id="modSign" class="modal">
+        <span class="closeSign" title="Close Modal">&times;</span>
+
+        <form class="modal-content animate" id="formSign">
+            
+            <div class="container">
+                <h2>Sign Up</h2>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+                <label for="dob"><b>Date of birth</b></label><br>
+                <input type="date" name="dob" required><br><br>
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="gender">Gender: </label>
+                <input type="radio" name="ugender" value="Male" checked="checked">Male</input>
+                <input type="radio" name="ugender" value="Female">Female</input>
+
+                <h3>Looking for:</h3>
+
+                <label for="gender">Gender: </label>
+                <input type="radio" name="cgender" value="Male" checked="checked">Male</input>
+                <input type="radio" name="cgender" value="Female">Female</input><br>
+                
+                <label for="lookAge"><b>Age</b></label>
+                <div id='lookAge1'>
+                    <p>From:</p>
+                    <input type="number" name="ageFrom" id='ageFrom'>
+                </div>
+                <div id='lookAge2'>
+                    <p>To:</p>
+                    <input type="number" name="ageTo" id='ageTo'>
+                </div><br>
+
+
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                <div class="clearfix">
+                    <button type="button" class="cancelSign">Cancel</button>
+                    <button type="submit" class="btnSign">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
     <div class="path" data-splitting>
-        <h1>Meet Couples!        
+        
+        <h1>            
+            <button id='signUp'>Sign Up</button>
+            Meet Couples!        
             <button id='login'>Login</button>
         </h1>
 
