@@ -75,6 +75,7 @@ h1 {
   height: 400px;
   color: white;
   display: flex;
+  z-index: 0;  
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -243,13 +244,20 @@ input[type=text]:focus, input[type=password]:focus {
   }
   
   /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
+  @media screen and (max-width: 500px) {
+    .cancelSign, .btnSign {
+      width: 100%;
+   }
+   .container {
        display: block;
        float: none;
-    }
-    .cancel {
-       width: 100%;
+   }
+    .modal {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-right: 0;
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
     }
   }
 
@@ -258,13 +266,6 @@ input[type=text]:focus, input[type=password]:focus {
   content: "";
   clear: both;
   display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelSign, .btnSign {
-     width: 100%;
-  }
 }
 
 #lookAge1, #lookAge2 {
