@@ -132,15 +132,11 @@ dom.formLog.addEventListener('submit', (e) => {
       for(let i = 0; i < users.length; i++) {
         if(data.uname === users[i].uname && data.psw === users[i].psw) {
           localStorage.setItem('active_user', JSON.stringify(users[i]));
-          mainPage();
+          window.open('carousel.html', '_blank');
         } else {
           alert('Invalid user!');
         };
       };
-    };
-
-    function mainPage() {
-      location.replace("http://127.0.0.1:5500/carousel.html");
     };
 
     e.preventDefault();
