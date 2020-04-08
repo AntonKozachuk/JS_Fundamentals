@@ -34,12 +34,7 @@
             
                     // wait transition end
                     setTimeout(() => {
-                        // remove swiped card
-                        this.board.removeChild(this.topCard)
-                        // add new card
-                        this.push()
-                        // handle gestures on new top card
-                        this.handle()
+                        this.newCard()
                     }, 200)
             })
 
@@ -54,21 +49,10 @@
    
                     // wait transition end
                     setTimeout(() => {
-                        // remove swiped card
-                        this.board.removeChild(this.topCard)
-                        // add new card
-                        this.push()
-                        // handle gestures on new top card
-                        this.handle()
+                        this.newCard()
                     }, 200)
 
-                    let like = {}
-                    like.name = this.topCard.querySelector('.card-title').textContent;
-                    like.ulocation =  this.topCard.querySelector('#location').textContent;
-                    like.img = window.getComputedStyle(this.topCard.querySelector('.img-top')).backgroundImage;
-                    like.email =  this.topCard.querySelector('#email').textContent;
-                    like.gender =  this.topCard.querySelector('#gender').textContent;
-                    localStorage.setItem('like', JSON.stringify(like));
+                    this.like();
                     setTimeout(() => {
                         window.open('match.html', '_blank')
                     }, 200)
@@ -164,18 +148,13 @@
             
             if(dirX === 1){
                 this.likeTag.style.display = 'block'
+                this.nopeTag.style.display = 'none'
             } 
             if(dirX === -1){
                 this.nopeTag.style.display = 'block'
-            }
-                
-            if(window.getComputedStyle(this.likeTag,null).display === 'block') {
-                this.nopeTag.style.display = 'none'
-            }
-            if(window.getComputedStyle(this.nopeTag,null).display === 'block') {
                 this.likeTag.style.display = 'none'
             }
-
+                
             // calculate rotation, between 0 and +/- 45 deg
             let deg = this.isDraggingFrom * dirX * Math.abs(propX) * 45
             
@@ -231,22 +210,11 @@
                     
                     // wait transition end
                     setTimeout(() => {
-                        // remove swiped card
-                        this.board.removeChild(this.topCard)
-                        // add new card
-                        this.push()
-                        // handle gestures on new top card
-                        this.handle()
+                        this.newCard()
                     }, 200)
 
                     if(posX > 0) {
-                        let like = {}
-                        like.name = this.topCard.querySelector('.card-title').textContent;
-                        like.ulocation =  this.topCard.querySelector('#location').textContent;
-                        like.img = window.getComputedStyle(this.topCard.querySelector('.img-top')).backgroundImage;
-                        like.email =  this.topCard.querySelector('#email').textContent;
-                        like.gender =  this.topCard.querySelector('#gender').textContent;
-                        localStorage.setItem('like', JSON.stringify(like));
+                        this.like();
                         window.open('match.html', '_blank')
                     }
                
@@ -294,6 +262,10 @@
                 this.board.append(card)
             }
 
+            this.createProfile()         
+        }
+
+        createProfile() {
             let allProfiles = new Profiles;
             let title = document.querySelector('.card-title'),
                 ulocation = document.getElementById('location'),
@@ -312,10 +284,28 @@
                         gender.textContent = profiles.results[i].gender;
                         img.style.backgroundImage = `url(${profiles.results[i].picture.large})`;
                     ;}}
-            });           
+            });   
         }
-        
-        
+
+        like() {
+            let like = {}
+            like.name = this.topCard.querySelector('.card-title').textContent;
+            like.ulocation =  this.topCard.querySelector('#location').textContent;
+            like.img = window.getComputedStyle(this.topCard.querySelector('.img-top')).backgroundImage;
+            like.email =  this.topCard.querySelector('#email').textContent;
+            like.gender =  this.topCard.querySelector('#gender').textContent;
+            localStorage.setItem('like', JSON.stringify(like));
+        }
+
+        newCard() {
+            // remove swiped card
+            this.board.removeChild(this.topCard)
+            // add new card
+            this.push()
+            // handle gestures on new top card
+            this.handle()
+        }
+             
     }
 
     let board = document.querySelector('#board')

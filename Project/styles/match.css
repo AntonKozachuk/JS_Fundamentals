@@ -23,22 +23,20 @@ body {
 .col-1 {
 	width: 150px;
 	float: left;
-    font-weight: bold;
+	font-weight: bold;
+	font-size: larger;
     color: thistle;
 }
 
 .col-2 {
 	width: calc(100% - 150px);
 	float: left;
+	font-size: larger;
+	padding-bottom: 15px;
 }
 
 .clearBoth {
 	clear: both;
-}
-
-.about {
-	font-size: larger;
-	padding-bottom: 15px;
 }
 
 #name {
