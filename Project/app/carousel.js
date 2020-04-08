@@ -24,11 +24,11 @@
             this.nopeBtn = this.topCard.querySelector('.nopeBtn')
 
             this.nopeBtn.addEventListener('click', () => {
-                this.topCard.style.transition = 'transform 800ms ease-out'
+                this.topCard.style.transition = 'transform 500ms ease-out'
                 if (this.nextCard) this.nextCard.style.transition = 'transform 200ms linear'
 
                 this.topCard.style.transform =
-                        'translateX(-2000px) translateY(-800px) rotate(-45deg)'
+                        'translateX(-1500px) translateY(-800px) rotate(-45deg)'
                         
                 this.nopeTag.style.display = 'block'
             
@@ -39,11 +39,11 @@
             })
 
             this.likeBtn.addEventListener('click', () => {
-                this.topCard.style.transition = 'transform 800ms ease-out'
+                this.topCard.style.transition = 'transform 500ms ease-out'
                 if (this.nextCard) this.nextCard.style.transition = 'transform 200ms linear'
 
                 this.topCard.style.transform =
-                        'translateX(2000px) translateY(-800px) rotate(45deg)'
+                        'translateX(1500px) translateY(-800px) rotate(45deg)'
                         
                 this.likeTag.style.display = 'block'
    
@@ -55,7 +55,7 @@
                     this.like();
                     setTimeout(() => {
                         window.open('match.html', '_blank')
-                    }, 200)
+                    }, 400)
             })
 
             // get next card
