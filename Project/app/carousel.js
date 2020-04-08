@@ -28,7 +28,7 @@
                 if (this.nextCard) this.nextCard.style.transition = 'transform 200ms linear'
 
                 this.topCard.style.transform =
-                        'translateX(-2000px) translateY(-500px) rotate(-45deg)'
+                        'translateX(-2000px) translateY(-800px) rotate(-45deg)'
                         
                 this.nopeTag.style.display = 'block'
             
