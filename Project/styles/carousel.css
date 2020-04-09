@@ -84,3 +84,180 @@
   #email, #gender{
     display: none;
   }
+
+  #change, #info {
+    height:50px; 
+    width:200px; 
+    margin: -20px -100px; 
+    position: relative;
+    display: block;
+    top: 82%; 
+    left:50%;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+  }
+
+  #info {
+    top:86%;
+    margin: -20px -80px;
+    width: 150px; 
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Extra styles for the cancel button */
+  .cancelChange {
+    padding: 14px 20px;
+    background: #f44336;
+  }
+
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelChange, .btnSubm {
+    float: left;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    cursor: pointer;
+    color: white;
+    height: 50px;
+  }
+
+  .btnSubm {
+    background: yellowgreen;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 25%;
+    top: 25%;
+    margin-right: 0;
+    width: 50%; /* Full width */
+    height: 53%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 30px;
+  }
+
+  #modInfo{
+    width: 50%;
+    height: 40%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content, #infoCont {
+    margin: 2% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: wheat;
+    background-color: rgba(0,0,0,0.0);
+    text-align: center;
+    border: none;
+  }
+
+   /* The Close Button (x) */
+   .closeSign, .closeInfo {
+     position: absolute;
+     right: 25px;
+     top: 0;
+     color: wheat;
+     font-size: 35px;
+     font-weight: bold;
+   }
+   
+   .closeSign:hover,
+   .closeSign:focus,
+   .closeInfo:hover,
+   .closeInfo:focus   {
+     color: red;
+     cursor: pointer;
+   }
+
+    /* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#lookAge1, #lookAge2 {
+  margin: 10px;
+  display: inline-block;
+}
+
+#ageFrom, #ageTo {
+  width: 40px;
+}
+
+.col-1 {
+	width: 150px;
+	float: left;
+	font-weight: bold;
+  font-size: larger;
+  max-width: 30%;
+  flex: 0 0 30%;
+  text-align: left;
+  padding-left: 0;
+}
+
+.col-2 {
+	width: calc(100% - 150px);
+	float: left;
+	font-size: larger;
+  padding-bottom: 15px;
+  max-width: 100%;
+  flex: 0 0 100%;
+  text-align: left;
+}
+
+.clearBoth {
+	clear: both;
+}
+
+@media screen and (max-width: 500px) {
+  .cancelChange, .btnSubm {
+    width: 100%;
+ }
+ .container {
+     display: block;
+     float: none;
+ }
+  .modal, #modInfo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin-right: 0;
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+
+  #change, #info {
+    height:25px; 
+    width:200px; 
+    margin: -20px -100px; 
+    position: relative;
+    display: block;
+    top: 10%; 
+    left:50%;
+  }
+
+  #info{
+    top: 15%; 
+  }
+}

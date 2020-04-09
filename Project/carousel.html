@@ -12,10 +12,73 @@
         <link rel="stylesheet" href="styles/carousel.css">
 </head>
 <body>
-        <div id="board"></div>
+        <div id="board">
+                <button type="button" id="change">Change Preferences</button>
+                <button type="button" id="info">Check my info</button>
+                
+                <div id="modChange" class="modal">
+                        <span class="closeSign" title="Close Modal">&times;</span>
+                
+                        <form class="modal-content animate" id="formChange">
+                            
+                            <div class="container">
+                                <h2>Change Preferences</h2>
+                                <p>Please fill in this form to change preferences.</p>
+                                <hr>
+                
+                                <h3>Looking for:</h3>
+                
+                                <label for="gender">Gender: </label>
+                                <input type="radio" name="cgender" value="male" checked="checked">Male</input>
+                                <input type="radio" name="cgender" value="female">Female</input><br>
+                                
+                                <label for="lookAge"><b>Age</b></label>
+                                <div id='lookAge1'>
+                                    <p>From:</p>
+                                    <input type="number" name="ageFrom" id='ageFrom'>
+                                </div>
+                                <div id='lookAge2'>
+                                    <p>To:</p>
+                                    <input type="number" name="ageTo" id='ageTo'>
+                                </div><br><br>
+                     
+                                <div class="clearfix">
+                                    <button type="button" class="cancelChange">Cancel</button>
+                                    <button type="submit" class="btnSubm">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+        </div>
 
+        <div id="modInfo" class="modal">
+                <span class="closeInfo" title="Close Modal">&times;</span>
+                <div class="container" id="infoCont">
+                        <h2>My Info</h2>
+                        <hr>
+                        <div class="name">
+                                <span><h2 id="name"></h2></span>
+                        </div>
+                        <div class="dob">
+                                <div class="col-1">Day of birth:</div>
+                                <div class="col-2" id="dob"></div>
+                                <div class="clearBoth"></div>
+                        </div>
+                        <div class="gend">
+                                <div class="col-1">Gender:</div>
+                                <div class="col-2" id="ugender"></div>
+                                <div class="clearBoth"></div>
+                        </div>
+                        <div class="lookFor">
+                                <div class="col-1">Looking for:</div>
+                                <div class="col-2" id="lookFor"></div>
+                                <div class="clearBoth"></div>
+                        </div>
+                </div>       
+        </div>
 
         <script src="app/profiles.js"></script>
         <script src="app/carousel.js"></script>
+        <script src="app/modals.js"></script>
 </body>
 </html>

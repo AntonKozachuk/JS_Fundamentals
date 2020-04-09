@@ -9,8 +9,7 @@ let dom = {
     cancelSign : document.querySelector('.cancelSign'),
     formLog : document.getElementById('logSign'),
     formSign : document.getElementById('formSign'),
-    ugender : document.getElementsByName('ugender'),
-    cgender : document.getElementsByName('ugender')
+    psw : document.querySelector('.psw')
 };
 
 //button actions
@@ -41,6 +40,10 @@ dom.cancelLog.addEventListener('click', () => {
 
 dom.cancelSign.addEventListener('click', () => {
     dom.modSign.style.display = 'none';
+});
+
+dom.psw.addEventListener('click', () => {
+    alert('You\'d better remember it!');
 });
 
 //submit sign up form
@@ -82,7 +85,9 @@ dom.formSign.addEventListener('submit', (e) => {
     };
 
     if(getAge() < 18) {
-        alert('You are too young!');
+      alert('You are too young!');
+    } else if(Number(data.ageFrom) < 18 || Number(data.ageFrom) > Number(data.ageTo)) {
+      alert('Please enter correct age parameters!');
     } else {
       if(localStorage.getItem('user') === null) {
           users = [];
@@ -104,8 +109,10 @@ dom.formSign.addEventListener('submit', (e) => {
     dom.modLog.style.display = 'block';
     dom.modLog.style.width = 'auto';
     dom.modSign.style.display = 'none';
-    }
 
+    dom.formSign.reset();
+    }
+    
     e.preventDefault();
 });
 
