@@ -41,7 +41,7 @@ dom.formChange.addEventListener('submit', (e) => {
         };};
     };
 
-    if(Number(data.ageFrom) < 18 || Number(data.ageFrom) > Number(data.ageTo)) {
+    if(Number(data.ageFrom) < 18 || Number(data.ageFrom) > Number(data.ageTo) || Number(data.ageFrom) > 50 || Number(data.ageTo) > 50) {
         alert('Please enter correct age parameters!');
     } else {
         let activeUser = JSON.parse(localStorage.getItem('active_user'));

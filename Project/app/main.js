@@ -86,7 +86,7 @@ dom.formSign.addEventListener('submit', (e) => {
 
     if(getAge() < 18) {
       alert('You are too young!');
-    } else if(Number(data.ageFrom) < 18 || Number(data.ageFrom) > Number(data.ageTo)) {
+    } else if(Number(data.ageFrom) < 18 || Number(data.ageFrom) > Number(data.ageTo) || Number(data.ageFrom) > 50 || Number(data.ageTo) > 50) {
       alert('Please enter correct age parameters!');
     } else {
       if(localStorage.getItem('user') === null) {
