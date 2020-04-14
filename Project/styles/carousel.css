@@ -85,7 +85,7 @@
     display: none;
   }
 
-  button {
+  #change, #info, #likeBar {
     height:50px; 
     width:200px; 
     margin: -35px -100px; 
@@ -256,7 +256,7 @@
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   }
 
-  button {
+  #change, #info, #likeBar {
     height:25px; 
     width:200px; 
     margin: -20px -100px; 
