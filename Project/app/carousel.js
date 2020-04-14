@@ -189,7 +189,7 @@
                     // get right border position
                     posX = this.board.clientWidth;
            
-                } else if (propX < -0.25 && e.direction == Hammer.DIRECTION_LEFT) {
+                } else if (propX < -0.05 && e.direction == Hammer.DIRECTION_LEFT) {
           
                     successful = true
                     // get left border position
@@ -288,13 +288,56 @@
         }
 
         like() {
-            let like = {}
-            like.name = this.topCard.querySelector('.card-title').textContent;
+            let like = {};
+            let liked;
+            let actUser = JSON.parse(localStorage.getItem('active_user'));
+
+            let uname = this.topCard.querySelector('.card-title');
+            let bImg = window.getComputedStyle(this.topCard.querySelector('.img-top')).backgroundImage;
+            let mail = this.topCard.querySelector('#email');
+
+            like.name = uname.textContent;
             like.ulocation =  this.topCard.querySelector('#location').textContent;
-            like.img = window.getComputedStyle(this.topCard.querySelector('.img-top')).backgroundImage;
-            like.email =  this.topCard.querySelector('#email').textContent;
+            like.img = bImg;
+            like.email =  mail.textContent;
             like.gender =  this.topCard.querySelector('#gender').textContent;
             localStorage.setItem('like', JSON.stringify(like));
+
+            if(localStorage.getItem(`${actUser.uname}_likes`) === null) {
+                liked = [];
+            } else {
+                liked = JSON.parse(localStorage.getItem(`${actUser.uname}_likes`));
+            }
+
+            liked.push(like);
+                
+            localStorage.setItem(`${actUser.uname}_likes`, JSON.stringify(liked));
+            
+
+            let div = document.createElement('div');
+            let divImg = document.createElement('div');
+            let divMail = document.createElement('div');
+            let cont = document.createElement('div');
+            cont.className = 'cont';
+
+            document.getElementById('likes').appendChild(divImg);
+            document.getElementById('likes').appendChild(cont);
+
+            cont.appendChild(div);
+            cont.appendChild(divMail);
+
+            div.textContent = uname.textContent;
+            divMail.textContent = mail.textContent;
+            divImg.style.backgroundImage = bImg;
+            divImg.style.height = '70px';
+            divImg.style.width = '75px';
+            div.className = 'likeName';
+            divImg.className = 'likeImg';
+            divMail.className = 'likeMail';
+
+            document.getElementById('like').style.display = 'block';
+
+            this.likeRemove();         
         }
 
         newCard() {
@@ -304,6 +347,35 @@
             this.push()
             // handle gestures on new top card
             this.handle()
+        }
+
+        likeRemove(){
+            let imgList = document.querySelectorAll('.likeImg');
+            let actUser = JSON.parse(localStorage.getItem('active_user'));
+            let activeU = JSON.parse(localStorage.getItem(`${actUser.uname}_likes`));
+            let newLike;
+
+            imgList.forEach((elem) => {
+                elem.addEventListener('dblclick', (e) => {
+                    if(e.target == document.getElementById('likes').firstChild){
+                        document.getElementById('like').style.display = 'none';
+                    }
+                    for(let i = 0; i < activeU.length; i++) {
+                        if(e.target.nextSibling.firstChild.textContent === activeU[i].name){
+                            newLike = Object.keys(activeU).reduce((object, key) =>{
+                                if(key !== `${i}`) {
+                                    object[key] = activeU[key]
+                                }
+                                return object;
+                            }, {})      
+                        };
+                      };
+                    localStorage.setItem(`${actUser.uname}_likes`, JSON.stringify(newLike));
+ 
+                    e.target.nextSibling.remove();   
+                    e.target.remove(); 
+                })
+            })    
         }
              
     }

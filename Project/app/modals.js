@@ -12,6 +12,22 @@ let dom = {
     dobDiv : document.getElementById('dob'),
     gendDiv : document.getElementById('ugender'),
     lookDiv : document.getElementById('lookFor'),
+    closeLikes : document.querySelector('.closeLikes'),
+    likeDiv : document.getElementById('like'),
+    likeProf : document.getElementById('likes'),
+    btnLikes : document.getElementById('likeBar')
+}
+
+dom.btnLikes.addEventListener('click', () => {
+    dom.likeDiv.style.display = 'block';
+});
+
+dom.closeLikes.addEventListener('click', () => {
+    dom.likeDiv.style.display = 'none';
+});
+
+if(dom.likeProf.firstChild === null) {
+    dom.likeDiv.style.display = 'none';
 }
 
 dom.closeSign.addEventListener('click', () => {
@@ -80,4 +96,3 @@ dom.infoBtn.addEventListener('click', () => {
 dom.closeInfo.addEventListener('click', () => {
     dom.modInfo.style.display = 'none';
 });
-
