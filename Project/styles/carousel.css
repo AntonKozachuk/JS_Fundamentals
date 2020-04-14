@@ -259,7 +259,7 @@
   #change, #info, #likeBar {
     height:25px; 
     width:200px; 
-    margin: -20px -100px; 
+    margin: -40px -100px; 
     position: relative;
     display: block;
     top: 10%; 
@@ -267,7 +267,11 @@
   }
 
   #info{
-    top: 15%; 
+    top: 20%; 
+  }
+
+  #likeBar {
+    top: 30%;
   }
 }
 
